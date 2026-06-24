@@ -87,17 +87,17 @@ public class BoardController {
 		String filePath = null;
 		
 		// 윈도우
-		File uploadDir = new File(UPLOAD_DIR);
-		if(!uploadDir.exists()) {
-			uploadDir.mkdirs();
-		}
-		
-//		try {
-//			createDirectoryWithPermissions(UPLOAD_DIR);
-//		} catch(IOException e) {
-//			e.printStackTrace();
-//			return "error";
+//		File uploadDir = new File(UPLOAD_DIR);
+//		if(!uploadDir.exists()) {
+//			uploadDir.mkdirs();
 //		}
+		
+		try {
+			createDirectoryWithPermissions(UPLOAD_DIR);
+		} catch(IOException e) {
+			e.printStackTrace();
+			return "error";
+		}
 		
 		if(file != null && !file.isEmpty()) {
 			try {
